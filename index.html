@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valid8 - JavaScript Validation Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background: #282c34;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #ffcc00;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Valid8 - JavaScript Validation Library</h1>
+
+    <div class="section">
+        <h2>Overview</h2>
+        <p><b>Valid8</b> is a lightweight and flexible JavaScript validation library. It helps validate data structures such as strings, numbers, booleans, arrays, and objects with customizable validation rules.</p>
+    </div>
+
+    <div class="section">
+        <h2>Installation</h2>
+        <p>Install <b>Valid8</b> from NPM:</p>
+        <pre><code>npm install valid8</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Usage</h2>
+        <p>Import and use the library:</p>
+        <pre><code>const Validator = require("valid8");
+
+const schema = Validator.string().required().minLength(3);
+const result = schema.validate("Hi");
+console.log(result); 
+// { success: false, errors: ['Minimum length is 3.'] }</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>API Reference</h2>
+
+        <h3>String Validation</h3>
+        <pre><code>Validator.string()</code></pre>
+
+        <h3>Number Validation</h3>
+        <pre><code>Validator.number()</code></pre>
+
+        <h3>Boolean Validation</h3>
+        <pre><code>Validator.boolean()</code></pre>
+
+        <h3>Array Validation</h3>
+        <pre><code>Validator.array()</code></pre>
+
+        <h3>Object Validation</h3>
+        <pre><code>Validator.object()</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Validation Methods</h2>
+
+        <h3>required()</h3>
+        <p>Ensures the value is not <code>null</code>, <code>undefined</code>, or an empty string.</p>
+        <pre><code>Validator.string().required();</code></pre>
+
+        <h3>minLength(length)</h3>
+        <p>Ensures a string has at least <code>length</code> characters.</p>
+        <pre><code>Validator.string().minLength(3);</code></pre>
+
+        <h3>maxLength(length)</h3>
+        <p>Ensures a string has at most <code>length</code> characters.</p>
+        <pre><code>Validator.string().maxLength(10);</code></pre>
+
+        <h3>min(number)</h3>
+        <p>Ensures a number is greater than or equal to <code>number</code>.</p>
+        <pre><code>Validator.number().min(5);</code></pre>
+
+        <h3>max(number)</h3>
+        <p>Ensures a number is less than or equal to <code>number</code>.</p>
+        <pre><code>Validator.number().max(100);</code></pre>
+
+        <h3>validate(value)</h3>
+        <p>Validates the given value against the schema.</p>
+        <pre><code>const schema = Validator.string().required().minLength(3);
+console.log(schema.validate("Hi")); 
+// { success: false, errors: ['Minimum length is 3.'] }</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Publishing to NPM</h2>
+
+        <h3>1️⃣ Ensure you are logged in to NPM</h3>
+        <pre><code>npm login</code></pre>
+
+        <h3>2️⃣ Update package.json</h3>
+        <pre><code>{
+  "name": "valid8",
+  "version": "1.0.0",
+  {
+    "name": "valid8",
+    "version": "1.0.0",
+    "description": "A lightweight schema validation library for JavaScript",
+    "homepage": "https://github.com/hitankshah/shah#readme",
+    "bugs": {
+      "url": "https://github.com/hitankshah/shah/issues"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/hitankshah/shah.git"
+    },
+    "license": "MIT",
+    "author": "Hitank Shah",
+    "type": "commonjs",
+    "main": "src/index.js",
+    "directories": {
+      "test": "tests"
+    },
+    "scripts": {
+      "test": "jest",
+      "prepublishOnly": "npm test"
+    },
+    "keywords": ["validation", "schema", "data-validation", "javascript", "form-validation"],
+    "devDependencies": {
+      "jest": "^29.0.0"
+    }
+  }
+  
+}</code></pre>
+
+        <h3>3️⃣ Publish the package</h3>
+        <pre><code>npm publish --access public</code></pre>
+    </div>
+
+    <div class="section">
+        <h2>License</h2>
+        <p>This library is open-source under the <b>MIT License</b>.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
